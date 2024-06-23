@@ -16,7 +16,7 @@ jobs:
             matrix: ${{ fromJSON(needs.prepare.outputs.matrix-json) }}
         runs-on: ubuntu-latest
         steps:
-            - name: print runner
+            - name: print name
               run: echo "${NAME}"
               env:
                   NAME: ${{ matrix.name }}
