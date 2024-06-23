@@ -17,6 +17,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: print runner
-              run: echo "${NAME}"
+              run: echo "$NAME"
               env:
                   NAME: ${{ matrix.name }}
