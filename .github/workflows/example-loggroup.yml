@@ -1,0 +1,19 @@
+name: Greet
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: greet
+        run: |
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
+          echo "::group::Greet"
+          echo "hello world"
+          echo "::endgroup::"
