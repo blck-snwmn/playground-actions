@@ -1,4 +1,4 @@
-name: Greet
+name: log group
 
 on:
   push:
