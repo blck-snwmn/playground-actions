@@ -1,0 +1,23 @@
+name: Dynamic matrix
+on: push
+jobs:
+    sleep:
+        strategy:
+            fail-fast: false # Even if one job fails, the other jobs will continue to sleep.
+            matrix: 
+                time: [10, 20, 30]
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep "${SLEEP_TIME}" && exit 1
+              env:
+                SLEEP_TIME: ${{ matrix.time }}
+    sleep-failfast:
+        strategy:
+            # fail-fast: true # default:true. If one job fails, the other jobs will also terminate.
+            matrix: 
+                time: [10, 20, 30]
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep "${SLEEP_TIME}" && exit 1
+              env:
+                SLEEP_TIME: ${{ matrix.time }}
