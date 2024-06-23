@@ -1,0 +1,19 @@
+name: lint actions
+on:
+  push:
+    branches:
+      - main
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-go@v5
+          with:
+            go-version: 1.22
+        - name: install actionlint
+          run: |
+            go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.1
+        - name: run lint
+          run: |
+            actionlint
