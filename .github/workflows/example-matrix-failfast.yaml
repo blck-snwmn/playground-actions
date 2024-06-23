@@ -1,4 +1,4 @@
-name: Dynamic matrix
+name: matrix failfast
 on: 
     workflow_dispatch: 
 jobs:
