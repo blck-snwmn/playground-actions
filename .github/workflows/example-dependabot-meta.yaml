@@ -1,8 +1,7 @@
 name: fetch dependabot metadata
 on: 
-    push:
-        branches:
-            - main
+    pull_request:
+        
 jobs:
     fetch:
         if: ${{ github.actor == 'dependabot[bot]' }}
