@@ -14,3 +14,6 @@ jobs:
         - name: Check workflow files
           run: ${{ steps.get_actionlint.outputs.executable }} -color
           shell: bash
+        - name: force failed
+          run: |
+            exit 1
