@@ -9,7 +9,7 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: show log group
+      - name: show log group2
         run: |
           echo "::group::Show environment variables"
           printenv
