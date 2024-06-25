@@ -19,4 +19,3 @@ jobs:
           echo "::endgroup::"
         env:
           TEST: "test"
-          test: "test"
