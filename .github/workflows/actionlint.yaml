@@ -1,6 +1,9 @@
 name: lint actions
 on:
+  pull_request:
   push:
+    branches:
+      - main
 
 jobs:
     lint:
