@@ -17,3 +17,6 @@ jobs:
           echo "::group::Greet"
           echo "hello world"
           echo "::endgroup::"
+        env:
+          TEST: "test"
+          test: "test"
