@@ -12,7 +12,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+            - name: fetch dependabot metadata
+              id: meta
+              uses: dependabot/fetch-metadata@v2
+              with:
+                github-token: "${{ secrets.GITHUB_TOKEN }}"
             - name: merge
+              if: >-
+                ${{ steps.meta.outputs.package-ecosystem != 'github_actions' }}
               run: gh pr merge --auto --merge "$PR_URL"
               env:
                 PR_URL: ${{github.event.pull_request.html_url}}
