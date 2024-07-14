@@ -1,0 +1,23 @@
+name: "command demo"
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  pull-requests: write
+  issues: write
+  checks: read
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/command@v1.2.0
+        id: command
+        with:
+          command: ".ping"
+
+      - name: ping!
+        if: ${{ steps.command.outputs.continue == 'true' }}
+        run: echo "Ping!Ping!Ping!Ping!"
