@@ -13,7 +13,7 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
-      - uses: github/command@v1.2.2
+      - uses: github/command@v1.3.0
         id: command
         with:
           command: ".ping"
